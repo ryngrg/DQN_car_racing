@@ -159,9 +159,10 @@ class DQNAgent():
         self.q_network.model.save('carRacingModel.h5')
 
     def load_model(self):
-        self.q_network.model = load_model('carRacingModel.h5')
+        self.q_network.model = keras.models.load_model('carRacingModel.h5')
 
 agent = DQNAgent(env, 32)
+# agent.load_model()
 num_episodes = 500
 
 for ep in range(num_episodes):
